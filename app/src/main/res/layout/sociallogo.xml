@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:id="@+id/linearLayoutSocialLogo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp">
+
+        <ImageView
+            android:id="@+id/imageViewFacebook"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="@color/facebookBlue"
+            android:padding="10dp"
+            android:src="@drawable/img_facebook" />
+
+        <ImageView
+            android:id="@+id/imageViewTwitter"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:background="@color/twitterBlue"
+            android:padding="10dp"
+            android:src="@drawable/img_twitter" />
+
+        <ImageView
+            android:id="@+id/imageViewGoogle"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="@color/googleRed"
+            android:padding="10dp"
+            android:src="@drawable/img_googleplus" />
+
+    </LinearLayout>
+
+</android.support.constraint.ConstraintLayout>

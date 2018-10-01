@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/relativeLayoutLogoWithTextAndSquare">
+
+        <include layout="@layout/logowithtext"
+            android:id="@+id/includeLogoWithText"></include>
+
+        <ImageView
+            android:id="@+id/imageViewSquare"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_below="@+id/includeLogoWithText"
+            android:layout_centerHorizontal="true"
+            android:rotation="45"
+            android:layout_marginTop="-10dp"
+            android:layout_marginBottom="5dp"
+            android:src="@drawable/square">
+        </ImageView>
+
+    </RelativeLayout>
+</android.support.constraint.ConstraintLayout>

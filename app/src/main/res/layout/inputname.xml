@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <RelativeLayout
+        android:id="@+id/relativeLayoutForName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginTop="30dp">
+
+        <ImageView
+            android:id="@+id/imageViewUserName"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="@color/googleRed"
+            android:padding="8dp"
+            android:src="@drawable/img_user"
+            android:tint="@color/white" />
+
+        <EditText
+            android:id="@+id/editTextUserName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/imageViewUserName"
+            android:layout_alignParentTop="true"
+            android:layout_toRightOf="@+id/imageViewUserName"
+            android:background="@color/editTextBG"
+            android:hint="Username"
+            android:inputType="text"
+            android:paddingLeft="20dp"
+            android:textSize="15sp" />
+
+    </RelativeLayout>
+
+</android.support.constraint.ConstraintLayout>
