@@ -5,6 +5,7 @@
 */
 package com.winsofteducationtechnologies.wetinstitute.activities;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -63,7 +64,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
        retun type      :       void
 
    */
-    @Override
+    /*@Override
     protected void onStart() {
         super.onStart();
         if(!SharedPrefManager.getUniqueInstance(this).isLoggedIn()){
@@ -71,7 +72,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
             intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
             startActivity(intent);
         }
-    }
+    }*/
 
     /*
        method          :       onClick
@@ -105,6 +106,10 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
        */
     private void userSignIn() {
+        final ProgressDialog progressDialog = new ProgressDialog(this);
+        progressDialog.setMessage("Signing In...");
+        progressDialog.show();
+
         String email = editTextUserEmail.getText().toString().trim();
         String password = editTextUserPassword.getText().toString().trim();
         validateInputs(email, password);
@@ -113,10 +118,12 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         call.enqueue(new Callback<LoginResponse>() {
             @Override
             public void onResponse(Call<LoginResponse> call, Response<LoginResponse> response) {
+                progressDialog.dismiss();
                 LoginResponse loginResponse = response.body() ;
 
                 if(!loginResponse.isError()){
-                    Toast.makeText(LoginActivity.this,loginResponse.getMessage(),Toast.LENGTH_LONG).show();
+               //     Toast.makeText(LoginActivity.this,loginResponse.getMessage(),Toast.LENGTH_LONG).show();
+                    finish();
                     SharedPrefManager.getUniqueInstance(LoginActivity.this).saveUser(loginResponse.getUser());
                     Intent intent =new Intent(LoginActivity.this,UserProfileActivity.class);
                     intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
@@ -129,7 +136,8 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
             @Override
             public void onFailure(Call<LoginResponse> call, Throwable t) {
-
+                progressDialog.dismiss();
+                Toast.makeText(getApplicationContext(), t.getMessage(), Toast.LENGTH_LONG).show();
             }
         });
 

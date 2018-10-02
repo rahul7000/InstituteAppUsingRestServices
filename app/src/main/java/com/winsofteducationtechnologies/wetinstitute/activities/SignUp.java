@@ -5,6 +5,7 @@
 */
 package com.winsofteducationtechnologies.wetinstitute.activities;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -102,16 +103,28 @@ public class SignUp extends AppCompatActivity implements View.OnClickListener {
 
    */
     private void userSignUp() {
+
+        //defining a progress dialog to show while signing up
+        final ProgressDialog progressDialog = new ProgressDialog(this);
+        progressDialog.setMessage("Signing Up...");
+        progressDialog.show();
+
         String email = editTextEmail.getText().toString().trim();
         String name = editTextName.getText().toString().trim();
         String password = editTextPassword.getText().toString().trim();
 
         validateInputs(email, name, password);
 
+        //defining the call
         Call<DefaultResponse> call = RetrofitClient.getInstance().getAPI().createUser(name, email, password, "male","role" );
+
+        //calling the api
         call.enqueue(new Callback<DefaultResponse>() {
             @Override
             public void onResponse(Call<DefaultResponse> call, Response<DefaultResponse> response) {
+
+                //hiding progress dialog
+                progressDialog.dismiss();
 
                 if(response.code() == 201){
                     DefaultResponse defaultResponse = response.body();
@@ -124,7 +137,9 @@ public class SignUp extends AppCompatActivity implements View.OnClickListener {
 
             @Override
             public void onFailure(Call<DefaultResponse> call, Throwable t) {
-
+                //hiding progress dialog
+                progressDialog.dismiss();
+                Toast.makeText(getApplicationContext(), t.getMessage(), Toast.LENGTH_LONG).show();
             }
         });
     }
