@@ -1,3 +1,8 @@
+/*
+        activity        :       SignUp
+        description     :       Used to insert the input fields and register the valid user
+        layout          :       activity_sign_up.xml
+*/
 package com.winsofteducationtechnologies.wetinstitute.activities;
 
 import android.content.Intent;
@@ -18,11 +23,26 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
+/*
+        class           :       SignUp
+        description     :       Used to insert the input fields and register the valid user
+*/
 public class SignUp extends AppCompatActivity implements View.OnClickListener {
 
     private EditText editTextName, editTextEmail, editTextPassword;
     private RadioGroup radioGroupGender;
 
+    /*
+        method          :       onCreate
+        description     :       When an Activity first call or launched then onCreate(Bundle savedInstanceState) method is responsible to create the activity.
+                                When ever orientation of activity gets changed or when an Activity gets forcefully terminated by any Operating System then savedInstanceState.
+                                After Orientation changed then onCreate(Bundle savedInstanceState) will call and recreate the activity and load all data from savedInstanceState.
+                                Basically Bundle class is used to stored the data of activity whenever above condition occur in app.
+                                onCreate() is not required for apps. But the reason it is used in app is because that method is the best place to put initialization code.
+                                You could also put your initialization code in onStart() or onResume() and when you app will load first, it will work same as in onCreate().
+        arguments       :       savedInstanceState
+        retun type      :       void
+    */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -37,16 +57,30 @@ public class SignUp extends AppCompatActivity implements View.OnClickListener {
         findViewById(R.id.textViewAlreadyLogin).setOnClickListener(this);
     }
 
+    /*
+        method          :       onStart
+        description     :       Called when the activity is becoming visible to the user.
+        arguments       :
+        retun type      :       void
+
+    */
     @Override
     protected void onStart() {
         super.onStart();
         if(SharedPrefManager.getUniqueInstance(this).isLoggedIn()){
-            Intent intent = new Intent(this,UserProfile.class);
+            Intent intent = new Intent(this,UserProfileActivity.class);
             intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
             startActivity(intent);
         }
     }
 
+    /*
+        method          :       onClick
+        description     :       Declared in OnClickListener interface and used when any widget like button, text, image etc is either clicked or touched or focused upon by the user
+        arguments       :       View
+        retun type      :       void
+
+    */
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
@@ -60,6 +94,13 @@ public class SignUp extends AppCompatActivity implements View.OnClickListener {
         }
     }
 
+    /*
+       method          :       userSignUp
+       description     :       used to validate and call singleton class object to call the respective api and process the onReponse and onFailure
+       arguments       :
+       retun type      :       void
+
+   */
     private void userSignUp() {
         String email = editTextEmail.getText().toString().trim();
         String name = editTextName.getText().toString().trim();
@@ -88,6 +129,13 @@ public class SignUp extends AppCompatActivity implements View.OnClickListener {
         });
     }
 
+    /*
+       method          :       validateInputs
+       description     :       Used to validate input data by the user
+       arguments       :       email, name, password
+       retun type      :       void
+
+   */
     private void validateInputs(String email, String name, String password) {
         if (name.isEmpty()) {
             editTextName.setError("Name is Required !!");
