@@ -65,7 +65,7 @@ public class SignUp extends AppCompatActivity implements View.OnClickListener {
         retun type      :       void
 
     */
-    @Override
+/*    @Override
     protected void onStart() {
         super.onStart();
         if(SharedPrefManager.getUniqueInstance(this).isLoggedIn()){
@@ -74,7 +74,7 @@ public class SignUp extends AppCompatActivity implements View.OnClickListener {
             startActivity(intent);
         }
     }
-
+*/
     /*
         method          :       onClick
         description     :       Declared in OnClickListener interface and used when any widget like button, text, image etc is either clicked or touched or focused upon by the user

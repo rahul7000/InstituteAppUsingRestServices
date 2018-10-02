@@ -20,7 +20,7 @@
             android:layout_marginBottom="20dp"
             android:layout_marginTop="10dp"
             android:fontFamily="sans-serif-medium"
-            android:text="LOGIN"
+            android:text="WET INSTITUTE"
             android:textColor="@color/white"
             android:textSize="22sp" />
     </LinearLayout>

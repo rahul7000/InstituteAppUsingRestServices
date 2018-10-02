@@ -89,7 +89,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                 break;
             case R.id.textViewSignUp:
                 Toast.makeText(LoginActivity.this, "textViewSignUp",Toast.LENGTH_LONG).show();
-                startActivity(new Intent(this, LoginActivity.class));
+                startActivity(new Intent(this, SignUp.class));
                 break;
             case R.id.buttonForgetPassword:
                 Toast.makeText(LoginActivity.this, "buttonForgetPassword",Toast.LENGTH_LONG).show();

@@ -8,11 +8,12 @@
     tools:context=".activities.SignUp">
 
     <android.support.v7.widget.CardView
+        android:id="@+id/cardViewSignUp"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:layout_centerInParent="true"
-        app:cardCornerRadius="10dp"
-        app:cardElevation="20dp"
+        app:cardElevation="10dp"
+        app:cardPreventCornerOverlap="false"
         app:cardUseCompatPadding="true">
 
         <ScrollView
