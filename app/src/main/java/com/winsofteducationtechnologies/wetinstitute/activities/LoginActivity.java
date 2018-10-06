@@ -106,13 +106,15 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
        */
     private void userSignIn() {
+        String email = editTextUserEmail.getText().toString().trim();
+        String password = editTextUserPassword.getText().toString().trim();
+
+        validateInputs(email, password);
+
         final ProgressDialog progressDialog = new ProgressDialog(this);
         progressDialog.setMessage("Signing In...");
         progressDialog.show();
 
-        String email = editTextUserEmail.getText().toString().trim();
-        String password = editTextUserPassword.getText().toString().trim();
-        validateInputs(email, password);
         Call<LoginResponse> call = RetrofitClient.getInstance().getAPI().userLogin(email, password);
 
         call.enqueue(new Callback<LoginResponse>() {

@@ -7,7 +7,7 @@
         android:icon="@drawable/ic_home"/>
     <item
         android:id="@+id/menuLocation"
-        android:title="Location"
+        android:title="Locatzion"
         android:icon="@drawable/ic_reach_us"/>
 
     <item

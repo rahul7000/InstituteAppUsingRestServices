@@ -103,17 +103,16 @@ public class SignUp extends AppCompatActivity implements View.OnClickListener {
 
    */
     private void userSignUp() {
-
-        //defining a progress dialog to show while signing up
-        final ProgressDialog progressDialog = new ProgressDialog(this);
-        progressDialog.setMessage("Signing Up...");
-        progressDialog.show();
-
         String email = editTextEmail.getText().toString().trim();
         String name = editTextName.getText().toString().trim();
         String password = editTextPassword.getText().toString().trim();
 
         validateInputs(email, name, password);
+
+        //defining a progress dialog to show while signing up
+        final ProgressDialog progressDialog = new ProgressDialog(this);
+        progressDialog.setMessage("Signing Up...");
+        progressDialog.show();
 
         //defining the call
         Call<DefaultResponse> call = RetrofitClient.getInstance().getAPI().createUser(name, email, password, "male","role" );

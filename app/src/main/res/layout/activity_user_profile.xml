@@ -10,6 +10,13 @@
         android:layout_height="match_parent"
         android:id="@+id/userProfile"
         android:layout_marginBottom="55dp">
+
+        <include
+            layout="@layout/grid_layout"
+            android:id="@+id/gridlayout"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"/>
+
     </RelativeLayout>
 
     <include
@@ -17,6 +24,5 @@
         android:id="@+id/includeBottomNavpigationMenu"
         android:layout_height="wrap_content"
         android:layout_width="match_parent"/>
-
 
 </RelativeLayout>

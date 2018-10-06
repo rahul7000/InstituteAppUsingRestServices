@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/bg_login"
+    android:background="@color/main_back"
     tools:context=".activities.SignUp">
 
     <android.support.v7.widget.CardView
@@ -104,6 +104,7 @@
                         android:layout_centerHorizontal="true"
                         android:layout_marginBottom="20dp"
                         android:layout_marginTop="20dp"
+                        android:textColor="@color/main_back"
                         android:text="Already have an account? Login with Account" />
 
                 </LinearLayout>

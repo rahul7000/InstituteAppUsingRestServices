@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".activities.LoginActivity"
     android:id="@+id/relativeLayoutParent"
-    android:background="@color/bg_login">
+    android:background="@color/main_back">
 
     <android.support.v7.widget.CardView
         android:id="@+id/cardViewLogin"
@@ -59,7 +59,7 @@
                     android:background="@color/transparent"
                     android:text="Forgot Password?"
                     android:textAllCaps="false"
-                    android:textColor="@color/textColor"
+                    android:textColor="@color/main_back"
                     android:textSize="10sp" />
 
             </RelativeLayout>
@@ -110,7 +110,7 @@
                     android:layout_marginTop="5dp"
                     android:text="Or Login with"
                     android:textColor="@color/textColor"
-                    android:textSize="12sp" />
+                    android:textSize="18sp" />
 
             </RelativeLayout>
 
@@ -139,6 +139,7 @@
                     android:layout_centerHorizontal="true"
                     android:layout_marginBottom="20dp"
                     android:layout_marginTop="20dp"
+                    android:textColor="@color/main_back"
                     android:text="Dont have an account? Create a New Account" />
 
             </LinearLayout>
