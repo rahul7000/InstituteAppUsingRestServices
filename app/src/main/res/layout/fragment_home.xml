@@ -5,11 +5,6 @@
 
     android:background="@drawable/shadow">
 
-    <ImageView
-        android:id="@+id/grid_image"
-        android:layout_width="130dp"
-        android:layout_height="220dp"
-        android:background="@drawable/shadow"></ImageView>
 
 
 </LinearLayout>
