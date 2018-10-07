@@ -4,7 +4,7 @@
     android:id="@+id/activity_main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/main_back">
+    android:background="@color/white">
 
 
     <ImageView
@@ -29,7 +29,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="Sign In"
-            android:background="@color/register_button"
+            android:background="@color/login_button"
             android:textColor="@color/white"
             android:layout_margin="10dp"/>
 
