@@ -2,6 +2,7 @@
         activity        :       LoginActivity
         description     :       Used to authenticate and signin the inputs entered by the valid user
         layout          :       activity_login.xml
+        date            :       13/10/2018
 */
 package com.winsofteducationtechnologies.wetinstitute.activities;
 
