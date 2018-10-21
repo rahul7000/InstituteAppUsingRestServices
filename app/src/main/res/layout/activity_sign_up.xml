@@ -12,7 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_centerInParent="true"
-        app:cardElevation="10dp"
+        app:cardElevation="@dimen/login_details_margintop"
         app:cardPreventCornerOverlap="false"
         app:cardUseCompatPadding="true">
 
@@ -34,7 +34,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_below="@id/includeLogoWithTextAndSquare"
-                    android:layout_marginTop="5dp"/>
+                    android:layout_marginTop="@dimen/login_details_margintop"/>
 
                 <include
                     layout="@layout/inputemail"
@@ -42,7 +42,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_below="@id/includeInputName"
-                    android:layout_marginTop="5dp"/>
+                    android:layout_marginTop="@dimen/login_details_margintop"/>
 
                 <include
                     layout="@layout/inputpassword"
@@ -50,7 +50,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/includeInputEmail"
-                    android:layout_marginTop="5dp" />
+                    android:layout_marginTop="@dimen/login_details_margintop" />
 
                 <!--<include
                      layout="@layout/inputconfirmpassword"
@@ -73,28 +73,29 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_below="@id/includeInputGender"
-                    android:layout_marginLeft="30dp"
-                    android:layout_marginRight="30dp"
-                    android:layout_marginTop="10dp">
+                    android:layout_marginLeft="@dimen/login_leftright_margin"
+                    android:layout_marginRight="@dimen/login_leftright_margin"
+                    android:layout_marginTop="@dimen/signup_details_marginbottom">
 
                     <Button
                         android:id="@+id/buttonSignUp"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="30dp"
-                        android:layout_marginRight="30dp"
-                        android:background="@color/googleRed"
+                        android:layout_marginLeft="@dimen/login_leftright_margin"
+                        android:layout_marginRight="@dimen/login_leftright_margin"
+                        android:background="@color/logo_red"
                         android:fontFamily="sans-serif-medium"
-                        android:text="SIGN IN"
+                        android:text="@string/btn_register"
                         android:textColor="@color/white" />
                 </RelativeLayout>
+
                 <LinearLayout
                     android:id="@+id/linearLayoutSignIn"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/relativeLayoutSignUp"
                     android:layout_centerHorizontal="true"
-                    android:layout_marginBottom="10dp">
+                    android:layout_marginBottom="@dimen/signup_details_marginbottom">
 
                     <TextView
                         android:id="@+id/textViewAlreadyLogin"
@@ -102,10 +103,10 @@
                         android:layout_height="wrap_content"
                         android:layout_below="@+id/linearLayout2"
                         android:layout_centerHorizontal="true"
-                        android:layout_marginBottom="20dp"
-                        android:layout_marginTop="20dp"
+                        android:layout_marginBottom="@dimen/signup_details_marginbottom"
+                        android:layout_marginTop="@dimen/signup_details_marginbottom"
                         android:textColor="@color/main_back"
-                        android:text="Already have an account? Login with Account" />
+                        android:text="@string/btn_link_to_login" />
 
                 </LinearLayout>
 

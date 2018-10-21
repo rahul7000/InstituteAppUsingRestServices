@@ -2,10 +2,12 @@ package com.winsofteducationtechnologies.wetinstitute.api;
 
 import com.winsofteducationtechnologies.wetinstitute.model.DefaultResponse;
 import com.winsofteducationtechnologies.wetinstitute.model.LoginResponse;
+import com.winsofteducationtechnologies.wetinstitute.model.UsersResponse;
 
 import retrofit2.Call;
 import retrofit2.http.Field;
 import retrofit2.http.FormUrlEncoded;
+import retrofit2.http.GET;
 import retrofit2.http.POST;
 
 public interface API {
@@ -25,5 +27,11 @@ public interface API {
     Call<LoginResponse> userLogin(
       @Field("email") String email,
       @Field("password") String password
+    );
+
+    @FormUrlEncoded
+    @GET("users")
+    Call<UsersResponse> getUser(
+
     );
 }

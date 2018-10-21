@@ -1,9 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <dimen name="item_offset">10dp</dimen>
-    <dimen name="detail_backdrop_height">250dp</dimen>
-    <dimen name="backdrop_title">30dp</dimen>
-    <dimen name="backdrop_subtitle">18dp</dimen>
+    <dimen name="cardview_login">10dp</dimen>
+
+    <dimen name="login_details_margintop">5dp</dimen>
+    <dimen name="login_details_marginbottom">10dp</dimen>
+    <dimen name="login_leftright_margin">30dp</dimen>
+    <dimen name="forget_passord">12sp</dimen>
+    <dimen name="signup_details_marginbottom">10dp</dimen>
+
+    <dimen name="userprofile_marginbottom">55dp</dimen>
+
+    <dimen name= "logo_main_width">100dp</dimen>
+    <dimen name= "logo_main_height">110dp</dimen>
+    <dimen name= "button_main_margin">10dp</dimen>
+
     <dimen name="card_margin">5dp</dimen>
     <dimen name="card_album_radius">0dp</dimen>
     <dimen name="album_cover_height">160dp</dimen>
